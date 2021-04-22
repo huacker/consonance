@@ -11,6 +11,7 @@ class AppVersionConfig(object):
         :type version: str
         """
         dissected = version.split('.')
+        dissected=dissected[0:3]#add by hq.last review by 2021 04 22
         assert len(dissected) > 2, "version must be in format x.y.z"
         self._primary, self._secondary, self._tertiary = map(lambda v:int(v), dissected)
 
